@@ -1,0 +1,1080 @@
+@import url("reset.css");
+
+
+/* imported fonts */
+
+/* font-family: 'Roboto Slab', serif; */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap');
+
+/* font-family: 'Lato', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+/* font-family: 'Raleway', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap');
+
+/* font-family: 'Prompt', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+
+
+
+
+
+html {
+    margin: auto; /* 0 is for top-left and auto is for left-right (horizontally). It centres a child element within a parent element based on a free space(margin) */
+    background-color: #ffffff;
+
+    /*position: relative;*/
+    /*height: 100%;*/
+}  
+
+
+
+
+/*Image by <a href="https://www.freepik.com/free-photo/top-view-dice-alphabet-frame-concept_8381580.htm#page=5&query=english%20vocabulary&position=47&from_view=search&track=ais&uuid=3ff9ba0a-709a-47d3-a50e-aabb63b95284">Freepik</a>*/
+
+body {
+    /*margin: auto;
+    width: 1200px;*/
+    
+    
+    background-image: url("../Images-file/backg1op0.4.jpg");
+    background-repeat: no-repeat;
+    /*background-blend-mode: hue; /* hue is fine*/
+    /*background-size: 2700px 1800px;*/ /* (x, y) */ /* to keep the ratio 1.5 : 1  (previous)*/
+    background-position: -250px 0px; /* previous*/
+
+    background-size: 3000px 2000px; /* (x, y) */ /*   (current)*/
+    background-position: -300px -25px; /* current*/
+    
+    /*display: table;
+    width: 100%;*/
+    /*height: 100%;*/
+    
+}
+
+body.background {
+    filter:opacity(30%);
+}
+
+
+
+
+header {
+    width: 100%;
+    min-width: 900px; /* <ul> elements (li) will NOT move down while decreasing the window size */
+}
+
+
+
+   
+
+/*------------- Navigation bar - Menu -----------------------------*/
+
+
+.menu_bar {
+    /*background-color: lightgray;*/
+    background-color: black;
+    height: 80px;
+    width: 100%;
+    /*display: flex;*/ /* if display: flex, extensions must be added (https://shouldiprefix.com/) */
+    /*display: inline-flex;*/
+    /*display: inline-block;*/
+    align-items: center;
+    text-align: center;
+    /*justify-content: center;*/
+    justify-content: space-between;
+    padding: 0 5px;
+    /*padding-right: 50px;*/
+    
+}
+
+.menu_bar h1 {
+    float: left;
+}
+
+.logo {
+    color: dodgerblue;
+    font-size: 30px;
+    margin: 25px 25px;  
+}
+
+
+.logo span {
+    color: red;
+}
+
+
+.menu_bar ul {
+    list-style: none;
+    /*display: flex;*/
+    /*display: block;*/
+    display: -webkit-inline-flex; 
+    display: -moz-inline-flex;
+    display: -ms-inline-flex;
+    display: inline-flex;
+    /*vertical-align: middle;*/
+    margin-top: 20px;
+    
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    
+}
+
+.menu_bar ul li {
+    padding: 10px 10px;
+    position: relative;
+    letter-spacing: 1.5px;
+    /*color: deepskyblue;*/
+    
+}
+
+
+/* styling navigation bar elements: Contact */
+#contact {
+    width: 250px;
+    color: red;
+    line-height: 20px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 1em;
+}
+
+
+.menu_bar ul li a {
+    color: deepskyblue;
+    text-decoration: none;
+    font-size: 20px; /* propably should be changed and moved to .menu_bar ul or li */
+   
+    transition: all 0.4s;
+}
+
+.menu_bar ul li a:hover {
+    color: white;   
+}
+
+.dropdown_menu {
+    display: none;
+}
+
+/* when we hover over (.menu_bar ul li) then the whole list (.dropdown_menu) will be styled */
+.menu_bar ul li:hover .dropdown_menu {
+    display: block;
+    position: absolute; /*its parent must have a relative position*/
+    left: 0;
+    top: 100%;
+    /*margin-top: 15px;
+    margin-left: -15px;*/
+    background-color: black;   
+}
+
+.menu_bar ul li:hover .dropdown_menu ul {
+    display: block;
+    margin: 10px;
+    
+}
+
+.menu_bar ul li:hover .dropdown_menu ul li {
+    width: 170px;
+    padding: 10px;
+    border-bottom: 1px dotted white;
+    text-align: left;
+    z-index: 1; 
+}
+
+
+.menu_bar ul li:hover .dropdown_menu {
+    border-radius: 5px;
+}
+
+.dropdown_menu ul li:hover .dropdown_menu2 {
+    border-radius: 5px;
+}
+
+
+.menu_bar ul li:hover .dropdown_menu ul li:last-child {
+    border-bottom: none;   
+}
+
+
+.menu_bar ul li:hover .dropdown_menu ul li:hover {
+    /*background-color: darkgrey;*/
+}
+
+/* styling navigation bar icons: arrows */
+.menu_bar .fa {
+    float: right;
+    margin-left: 10px;
+    padding-top: 3px;
+}
+
+/* styling navigation bar icons: home, YT */
+.menu_bar .ho, .yt {
+    float: left;
+    margin-right: 10px;
+    padding-top: 0px;
+}
+
+/* styling navigation bar icons: gmail */
+.menu_bar .gm {
+    float: left;
+    margin-right: 10px;
+    padding-top: 0px;
+}
+
+
+.dropdown_menu2 {
+    display: none;
+}
+
+.dropdown_menu ul li:hover .dropdown_menu2 {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 190px;
+    background-color: black;
+}
+
+
+.dropdown_menu ul li:hover .dropdown_menu2 ul {
+    display: block;
+    margin: 10px;
+}
+
+.dropdown_menu ul li:hover .dropdown_menu2 ul li {
+    width: 190px;
+    padding: 10px;
+    text-align: left;
+    z-index: 1;
+}
+
+
+
+
+/*  ----------- Main container - body -------------------------      */
+
+
+/* main container of guide.html */
+#testMain {
+    margin-top: 200px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin: 400px 10px;*/
+    /*width: 1100px;*/
+    width: 800px;
+
+    
+    
+}
+
+#vid1, #vid2  { 
+    margin: 50px;
+    border: solid 3px black;
+    width: 520px;
+    height: 440px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    
+}
+
+#vid1 h1, #vid2 h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1;
+    /*margin-top: 35px;*/
+    position: absolute;
+    z-index: 1;
+    top: 50px;
+    left: 175px;
+}
+
+
+
+/* main container of Index.html */
+#mainContainer {
+    margin-top: 200px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin: 400px 10px;*/
+    /*width: 1100px;*/
+    width: 900px;
+
+    /*height: 100%;*/
+    /*position: relative;*/
+    /*z-index: 2;*/
+    
+}
+
+
+
+#mainUserNav {
+    border: solid 3px black;
+    margin-bottom: 10px;
+    
+    background-color: white;
+    border-radius: 6px;
+    
+    padding-left: 20px;
+}
+
+.wordOutput {
+    
+    border: solid 3px black;
+    margin-bottom: 10px;
+    min-height: 100px;
+    height: auto;
+    /*text-align: center;*/
+    vertical-align: middle;
+    
+    background-color: white;
+    border-radius: 10px;
+    
+    padding-left: 20px;
+}
+
+.ticklabel {
+    /*border: dotted 2px lightblue;*/
+}
+
+#idiomCheck, #collocationCheck {
+    min-height: 120px;
+    height: auto;
+}
+
+
+input[type=button],
+input[type=submit] {
+    border: solid 1px grey;
+}
+
+input[type=checkbox] {
+   border: solid 1px red; 
+   background-color: chartreuse;
+}
+
+
+/*#verbCheck {
+    
+    border: solid 2px black;
+    margin-bottom: 6px;
+}*/
+
+.tickbox {
+    border: dotted 2px red;
+}
+
+
+
+
+.testClass, .wordcat {
+    border: solid 2px black;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    vertical-align: middle;
+    width: 130px;
+    
+    background-color: white;
+    border-radius: 6px;
+    
+    
+}
+
+.wordcat {
+    text-align: left;
+}
+
+/* testing only */
+#testSearching {
+    height: 20px;
+    display: block;
+}
+
+#delSearch {
+    height: 150px;
+}
+
+#dropdowntest {
+    margin-right: 100px;
+}
+
+
+/* Adds bottom padding to the Add/Edit div container */
+#newInfo {
+    padding-bottom: 15px;
+    min-height: 115px;
+}
+
+.prNm {
+    min-width: 100px;
+    width: auto;
+    /*width: auto;*/ /* inherited */
+    height: auto;
+    max-width: 150px; /* >optional 130px */
+    padding: 10px;
+    
+
+    
+    border: solid 2px black;
+    margin: 10px;
+    text-align: center;
+    vertical-align: middle;
+    
+    
+    background-color: white;
+    border-radius: 6px;
+    
+    margin-top: 20px;
+}
+
+
+.prVal {
+    width: auto;
+    height: auto;
+    min-width: 100px;
+    max-width: 300px; /* >optional 130px */
+    padding: 10px;
+    
+    
+    
+    border: solid 1px grey;
+    margin: 10px;
+    text-align: center;
+    vertical-align: middle;
+    
+    background-color: white;
+    border-radius: 6px;
+    
+    margin-top: 20px; /* margin-top 32px altogether*/
+}
+
+.anyBtt {
+    
+    margin: 10px;
+    /*padding: 5px;*/
+    text-align: center;
+    vertical-align: middle;
+    /*width: 130px;*/
+    
+    background-color: white;
+    
+    
+    margin-top: 22px;
+}
+
+#no, #ve, #ad, #te, #id, #co, #catA, #catD, #inputWord, #inputExample, #dropPlusObj, #exaDescr {
+    margin-top: 20px;
+}
+
+#plusContent {
+    margin-left: 50px;
+}
+
+/* a drop-down list to choose a word category for adding new content purposes */
+#catA {
+   width: 200px; 
+   height: auto;
+   padding-top: 10px;
+   padding-bottom: 10px; 
+}
+
+/* an option field to choose a category to add some content */
+#categories {
+    min-height: 25px;
+    /*text-align: center;*/
+}
+
+#categories, #inpword, #inpexample, #moreCateg, #takeinp {
+    margin-top: 5px;
+}
+
+
+/* a drop-down list to choose a word category for searching/removing purposes */
+#catD {
+   width: 200px;
+   height: auto;
+   padding-top: 10px;
+   padding-bottom: 10px; 
+}
+
+/* an option field to choose a category to delete/search some content */
+#moreCateg {
+    min-height: 25px;
+    width: 130px;
+    /*text-align: center;*/
+}
+
+/* div box of #inpword */
+#inputWord {
+    width: 200px;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* an input text field to enter in a word(prop name) from a chosen category - adding content */
+#inpword {
+    width: 175px;
+    min-height: 20px;
+    text-align: center;
+    padding: 5px;
+   
+}
+
+/* div box of #inpexample */
+#inputExample {
+    width: 275px;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* an input text field to enter in an example(prop value) from a chosen category - adding content */
+#inpexample {
+    width: 250px;
+    min-height: 20px;
+    text-align: center;
+    padding: 5px;
+    
+}
+
+input[type=text] {
+    border: solid 2px green;
+}
+
+/* div box of #dropdowntest and #objDescr */
+#dropPlusObj {
+    width: 200px;
+    height: auto;
+    padding-top: 10px;
+    /*padding-bottom: 5px;*/
+    
+}
+
+/* an option field to choose vocab to delete/search it */
+#takeinp {
+    width: 175px;
+    min-height: 20px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+
+
+#teswords {
+    width: 200px;
+}
+
+/* inherits from its parent class */
+#objDescr {
+    margin-left: auto;
+    margin-right: auto;
+    
+   /* min-width: 80px;
+    width: auto;
+    height: auto;
+    max-width: 150px; /* >optional 130px */
+    
+}
+
+
+#exaDescr {
+    width: auto;
+    height: auto;
+    min-width: 100px;
+    max-width: 200px; /* >optional 130px */
+    
+    padding: 10px;
+    border: solid 1px grey;
+}
+
+
+#inpword:hover, #inpexample:hover {
+    border: solid 1px blue;
+    /*border-color: cornflowerblue;*/
+} 
+
+
+/*<a href ="https://www.w3schools.com/colors/colors_picker.asp"></a>*/
+#no {
+    border-color: red;
+    
+    /*border-style: solid;*/
+    /*border-top-color: #cc0000;
+    border-left-color: #cc0000;*/
+    
+    /*box-shadow: -1px -1px 1px #ff8080;*/
+    
+    /*-webkit-box-shadow: -3px -3px 3px #ff8080;
+    -moz-box-shadow: -3px -3px 3px #ff8080;
+    box-shadow: -3px -3px 3px #ff8080; */
+}
+
+#ve {
+    border-color: dodgerblue;
+    
+}
+
+#ad {
+    border-color: limegreen;
+   
+}
+
+#te {
+    border-color: blueviolet;
+    
+}
+
+#id {
+    border-color: grey;
+     
+}
+
+#co {
+    border-color: saddlebrown;
+
+     
+}
+
+
+
+.tickbox:hover {
+    /*border-color: cornflowerblue;
+    background-color: brown;
+    color: red;*/
+    cursor: pointer;
+}
+
+/* shuffle buttons */
+#changeWord, #changeWord2, #changeWord3,
+#changeWord4, #changeWord5, #changeWord6 {
+    border-color: cornflowerblue;
+    border-radius: 6px;
+}
+
+
+
+/* https://www.cssmatic.com/box-shadow */
+/* shuffle buttons */
+#changeWord:hover, #changeWord2:hover, #changeWord3:hover,
+#changeWord4:hover, #changeWord5:hover, #changeWord6:hover {
+    
+    transition: all 0.2s;
+    border-color: cornflowerblue;
+    
+    -webkit-box-shadow: 0px 0px 10px 3px rgba(83,218,242,0.5);
+    -moz-box-shadow: 0px 0px 10px 3px rgba(83,218,242,0.5);
+    box-shadow: 0px 0px 10px 3px rgba(83,218,242,0.5);
+    
+    background-color: #e6ffff;
+    color: black;
+    cursor: pointer;
+    
+    font-weight: bold;
+    
+}
+
+/* pop-up button */
+#clickPop {
+   border-color: lightgray;
+   border-radius: 6px;
+}
+
+/* pop-up button */
+#clickPop:hover {
+    transition: all 0.2s;
+    border-color: blue;
+    
+    -webkit-box-shadow: 0px 0px 10px 3px rgba(77, 77, 255, 0.5);
+    -moz-box-shadow: 0px 0px 10px 3px rgba(77, 77, 255, 0.5);
+    box-shadow: 0px 0px 10px 3px rgba(77, 77, 255, 0.5);
+    
+    background-color: #66a3ff;
+    color: white;
+    cursor: pointer;
+    
+    font-weight: bold;
+}
+
+/* add button */
+#addInfo {
+    background-color: #80ff80;
+    border-radius: 6px;
+}
+
+/* add button */
+#addInfo:hover {
+    transition: all 0.3s;
+    border-color: darkgreen;
+    
+    -webkit-box-shadow: 0px 0px 10px 3px rgba(77, 255, 77, 0.5);
+    -moz-box-shadow: 0px 0px 10px 3px rgba(77, 255, 77, 0.5);
+    box-shadow: 0px 0px 10px 3px rgba(77, 255, 77, 0.5);
+    
+    background-color: #00e600;
+    color: white;
+    cursor: pointer;
+    
+    font-weight: bold;
+    
+}
+
+/* delete record button */
+#delProperty {
+    background-color: #ff8080;
+    border-radius: 6px;
+}
+
+/* delete record button */
+#delProperty:hover {
+    transition: all 0.3s;
+    border-color: firebrick;
+    
+    -webkit-box-shadow: 0px 0px 10px 3px rgba(255, 77, 77, 0.5);
+    -moz-box-shadow: 0px 0px 10px 3px rgba(255, 77, 77, 0.5);
+    box-shadow: 0px 0px 10px 3px rgba(255, 77, 77, 0.5);
+    
+    background-color: #ff3333;
+    color: black;
+    cursor: pointer;
+    
+    font-weight: bold;
+}
+
+/* below refer to 'shuffle all' button */
+#shA1 {
+   /*background-color: yellow;*/ 
+}
+
+#shA2 {
+    /*background-color: aquamarine;*/
+}
+
+#resetWords {
+    background-color: #e6ffff;
+    border-radius: 6px;
+    padding-top: 5px;
+    border-color: grey;
+}
+
+#resetWords:hover {
+    background-color: #99ebff;
+    cursor: pointer;
+    border-color: black;
+}
+
+
+/* below refer to 'Add/Edit content' button */
+
+#plusContent {
+    background-color: #b3ffb3;
+    border-radius: 6px;
+    padding-top: 5px;
+    border-color: grey;
+}
+
+#plusContent:hover {
+    background-color: #33ff33;
+    cursor: pointer;
+    border-color: black;
+}
+
+
+/* below refer to 'Delete/Search content' button */
+
+#remSearch {
+    background-color: #ffc299;
+    border-radius: 6px;
+    padding-top: 5px;
+    border-color: grey;
+}
+
+#remSearch:hover {
+    background-color: #ff751a;
+    cursor: pointer;
+    border-color: black;
+}
+
+
+
+
+
+
+/*--------  Below styling refers to a toggle slider ---------------------       */
+
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  /*width: 60px;
+  height: 34px;*/
+    
+  width: 50px;
+  height: 22px;
+    
+  margin-top: 5px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  /*height: 26px;
+  width: 26px;*/
+    
+  height: 15px;
+  width: 15px;
+    
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* Rounded sliders */
+/*.slider.round {
+  border-radius: 34px;
+  /*border-radius: 20px;*/
+/*}*/
+
+
+
+
+/* the background - overlay - styling -------------------------------------------------------- */
+
+#overlay {
+    display: none; /* or opacity: 0;*/
+    position: fixed; /* after scrolling a page the overlap will follow us, an element is glued permanently */
+    z-index: 10; /* priority nr to be shown, the higher the more important  */
+    left: 0; /* left, top, right, bottom 0 say about a place where we want to position our element, 0 means attached from the very left/top/right or bottom, usually left:0 and top:0 should be enough */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%; /*full*/
+    height: 100%; /*full*/
+    overflow: auto; /*scrolling is enabled*/
+    background-color: rgba(0,0,0,0.5) /* black background + opacity*/
+    
+}
+
+/* the general pop-up window */
+.pop-window {
+    
+    overflow-y: scroll; /* the hidden content can be scrolled */
+    
+    display: none; /* initially every pop-up window is hidden until the button is pressed */
+    z-index: 20; /* priority nr to be shown, the higher the more important  */
+    background-color: white; /*#fefefe;*/
+    margin-top: 20px;
+    margin: auto; /*centered from every side*/
+    border: solid 1px #888;
+    width: 60%;
+    border-radius: 10px;
+    max-height: 550px;
+    max-width: 550px;
+    /*position: fixed; /* after scrolling a page the pop-wind will follow us */
+    /*position: relative;*/
+    
+    position: absolute; /* element is placed under and aligned to the left*/
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,-50%); /* axis (x, y) */
+    -ms-transform: translate(-50%,-50%);
+    
+    
+}
+
+/* header of a pop-up */
+.pop-header { 
+    padding: 10px;
+    display: flex; /*element will be positioned next to one another*/
+    justify-content: space-between; /* items will be placed apart */
+    align-items: center; 
+}
+
+/* a title inside the header */
+.pop-header .pop-title {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+
+.pop-header .close-win {
+    color: #aaaaaa;
+    outline: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/*the closing button*/
+
+/*.close-win {
+    color: #aaaaaa;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 10px;
+    text-decoration: none;
+    outline: none;
+    
+}*/
+
+.close-win:hover,
+.close-win:focus {
+    color: #000;
+    cursor: pointer;
+}
+
+
+
+#conTense {
+    display: none;
+}
+
+
+
+.testPop {
+    height: auto;
+    /*height: 700px; /* changing to 'auto'? */
+    width: 450px;
+    border: solid 3px black;
+    border-radius: 10px;
+    padding: 25px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    
+    font-size: 1.1em;
+    line-height: normal;
+    text-align: left;
+    
+    font-family: 'Raleway', sans-serif;
+}
+
+/* <span> can have its own class, it would be beneficial whilst using at least TWO diffrent span styling */
+.testPop span {
+    color: red;
+}
+
+.testPop h2 {
+    color: black;
+    font-weight: 900;
+    margin-bottom: 30px;
+    text-decoration: underline;
+    letter-spacing: 1px;
+    font-style: oblique;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.testPop h3 {
+    color: black;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.testPop p {
+    font-style: oblique;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+
+
+/* ------ footer ------------- */
+
+#foot {
+    width: 100%; /*full*/
+    height: 50px;
+    background-color: black;
+    /*position: sticky;*/
+    margin-top: 550px; /* 300px -> 400px */
+    /*position: absolute;*/
+    /*position: fixed;*/ /* overrides a window */
+    /*left: 0;*/ /* left, top, right, bottom 0 say about a place where we want to position our element, 0 means attached from the very left/top/right or bottom, usually left:0 and top:0 should be enough */
+    /*bottom: 0;*/
+    /*z-index: 1;*/
+    /*display: table-row;*/
+
+    
+
+}
+
+#ownership {
+    font-family: monospace;
+    color: white;
+    text-align: center;
+    display: block;
+    height: 25px;
+    width: 500px;
+    padding: 15px 0;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin: auto;*/ /* aligns an element horizontally */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

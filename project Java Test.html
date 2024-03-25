@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    
+<title>English vocabulary generator</title>
+<meta name="description" content="This is an app that helps to learn vocabulary and grammary.">
+<meta name="keywords" content="English, vocabulary, grammary, english speaking">
+<meta charset="UTF-8">
+      
+<meta http.equiv="X-Ua-Compatible" content="IE=edge, chrome=1">
+    
+                                            <!-- "../" is used when a given file in outside ("higher") of a folder with html/css files -->     
+<link rel="stylesheet" type="text/css" href="../CSS%20file/generatorStyles.css">
+
+ 
+<!-- To make sure that semantic elements will work on IE versions lower than 9 ; source: https://www.quora.com/What-is-HTML5-Shiv -->   
+<!--[if lt IE 9]> 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script> 
+  <![endif]-->    
+    
+    
+    <!-- used for external javascript code
+<script type="text/javascript" src="../Java%2520file/Main.js"> </script>  -->
+    
+  <!-- used for internal javascript code-->  
+<script type="text/javascript">
+    
+    const nouns = {
+        cat: ['This is a cat.', 'I\'ve seen a cat already.'],
+        rainbow: ['It is such a colorful rainbow.'],
+        comma: ['I must use a comma to separate property values in JS.'],
+    };
+    
+const numOfKeys = Object.keys(nouns).length; //Qty of keys in the object
+const randomNum = Math.floor(Math.random() * numOfKeys); // A range of indexes in the given object (0-n)
+const rndNoun = Object.keys(nouns)[randomNum]; // returns a random noun (key) based on a generated random number
+let rndNounExa = Object.values(nouns)[randomNum]; // returns a random noun example (value) based on a generated random number
+rndNounExa = rndNounExa.join(' '); // changes noun examples (as an array) into a string
+    
+    
+    
+    // document.write(argument) = shows in HTML (website) a value of a parameter
+    /*function removeProperty() {
+        let propName = document.getElementById("deleteIndex").value;
+        document.write(propName);
+    }
+    */
+    
+    // deleting :
+    // delete nouns.propName; // deleting a particular property
+    // delete nouns.propName.propValue; // deleting a value of a particular property
+        //or
+    // delete nouns.propName.propValue[n-th]; // deleting a value of a particular property
+    
+    // appending :
+    // nouns.propName = 'anotherExample' or '' or null; //  a particular property + its value
+        // or
+    // using .push(), e.g. nouns.propName.push('anotherExample');
+    
+    
+    
+</script>
+    
+</head>
+   
+    
+    
+<body>
+    <div id="noun"></div>
+    
+    <!-- (a handle) returns (gets, extracts, e.g. from an editing field) an element by a given id in an HTML file with a value followed by " = " -->
+    <script type="text/javascript">
+        
+        document.getElementById("noun").innerHTML = rndNoun;
+    </script>
+    
+    
+    <div id="nounExample"></div>
+    
+    <!-- returns an element by a given id -->
+    <script type="text/javascript">
+        
+        document.getElementById("nounExample").innerHTML = rndNounExa;
+    </script>
+    
+    
+    
+    <!-- creating en editing field -->
+    <input type="text" id="deleteIndex">
+    <!-- creating a button named 'shuffle' that performs a given task -->
+    <!-- onclick calls a function -->
+    <input type="submit" value="shuffle" onclick="typeInAnameOfaFunction()"> 
+    <input type="submit" value="remove" onclick="removeProperty()">
+    
+   
+    
+    
+    <!-- https://www.w3schools.com/html/html_form_elements.asp -->
+    <!-- https://www.w3schools.com/html/html_form_input_types.asp -->
+    <label for="fname" >First name:</label>
+    <input type="text" id="fname" name="fname" placeholder="Enter First name">
+    
+    
+    <label for="cars">Choose a car:</label>
+<select id="cars" name="cars">
+    <option value="choose a car" selected required>Choose a car</option>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat" >Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+    
+    
+    <label for="cars">Choose a car:</label>
+<select id="cars" name="cars" size="4" multiple required>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+    
+    
+    <textarea name="message" rows="2" cols="25"></textarea>
+    
+    <br>
+    <br>
+    <br>
+  <button type="button" onclick="alert('Hello World!')">Click Me!</button>  
+    
+    
+    <br>
+    <br>
+    
+   <form action="/action_page.php">
+  <fieldset>
+    <legend>Personalia:</legend>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form> 
+    
+    
+    
+   
+   <form action="/action_page.php">
+  <input list="browsers">
+  <datalist id="browsers">
+    <option value="Edge">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Sa">
+    <option value="Ssafari">
+    <option value="ssfari">
+    <option value="Satin">
+  </datalist>
+</form> 
+    
+    <br>
+    <br>
+    
+    <form>
+  <input list="words">
+  <datalist id="words">
+    <option value="egg">
+    <option value="Eter">
+    <option value="EE">
+    <option value="latency">
+  </datalist>
+</form> 
+    
+   
+    
+    <p>Choose your favorite Web language:</p>
+
+<form>
+  <input type="radio" id="html" name="fav_language" value="HTML">
+  <label for="html">HTML</label>
+  <input type="radio" id="css" name="fav_language" value="CSS">
+  <label for="css">CSS</label><br>
+  <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+  <label for="javascript">JavaScript</label>
+</form>
+    
+   <br>
+    <br>
+    
+    <form>
+  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  <label for="vehicle1"> noun </label><br>
+  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+  <label for="vehicle2"> verb </label><br>
+  <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+  <label for="vehicle3"> adjective </label>
+</form>
+  
+    <br>
+    <br>
+    
+    <form>
+  <label for="birthday">Birthday:</label>
+  <input type="date" id="birthday" name="birthday">
+</form>
+    
+    
+    <form>
+  <label for="email">Enter your email:</label>
+  <input type="email" id="email" name="email">
+</form>
+    
+    <br>
+    
+    <form>
+<input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+</form>
+    
+    
+ <br>
+    <br>
+    
+    <!-- Input Type Hidden -->
+    <form>
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <input type="hidden" id="custId" name="custId" value="3487">
+  <input type="submit" value="Submit">
+</form>
+    
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Input Type number -->
+    <form>
+  <label for="quantity">Quantity (between 1 and 5):</label>
+  <input type="number" id="quantity" name="quantity" min="1" max="5">
+</form>
+    
+    <br>
+    <br>
+    <br>
+    
+    
+    <!-- Input Type range -->
+    <form>
+  <label for="vol">Volume (between 0 and 50):</label>
+  <input type="range" id="vol" name="vol" min="0" max="50">
+</form>
+    
+    <br>
+    <br>
+    <br>
+    
+    <!-- Input Type search -->
+    
+    <form>
+  <label for="gsearch">Search a word:</label>
+  <input type="search" id="gsearch" name="gsearch">
+</form>
+    
+    <br>
+    <br>
+    <br>
+    
+    
+    <div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+    
+    
+    <br>
+    <br>
+    <br>
+    
+  
+    
+        <br>
+    <br>
+    <br>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+  <!-- https://www.w3schools.com/tags/ref_eventattributes.asp - form events -->  
+  <!-- https://www.w3schools.com/howto/howto_js_dropdown.asp -->
+    
+</body>
+    
+    
+    
+<footer>
+    
+</footer>
+    
+ 
+</html>
+    
+ 
+
+<!--  a navigation example -->
+
+ <!--
+    <header id="top">
+            <nav>
+            <div class="mainheader">
+               <ul class="navbar">
+                  <li><a href="Index.html">Home</a></li>
+                  <li><a href="#">Guideline</a>
+                      <div class="subnavbar1">
+                      <ul >
+                          <li><a href="#">...</a></li>
+                          <li><a href="#">...</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li><a href="#">Learning</a>
+                      <div class="subnavbar1">
+                      <ul >
+                          <li><a href="#">Vocabulary</a></li>
+                          <li><a href="#">Speaking</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li><a href="#">Useful Links</a>
+                      <div class="subnavbar1">
+                      <ul >
+                          <li><a href="#">Translators</a>
+                              <div class="subnavbar2">
+                              <ul >
+                                  <li><a href="#">Google Translator</a></li>
+                                  <li><a href="#">The 2nd one</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li><a href="#">YT Learning</a>
+                              <div class="subnavbar2">
+                              <ul >
+                                  <li><a href="#">Author #1</a></li>
+                                  <li><a href="#">Author #2</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                      </ul>
+                   </div>
+                  </li>
+                  <li><a href="#">Contact Me</a>
+                   <div class="subnavbar1" id="contact">
+                      <ul >
+                          <li>E-mail: ...</li>
+                      </ul>
+                    </div>
+                   
+                   </li>
+               </ul> 
+            </div>
+            </nav> 
+     </header>
+    
+    -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

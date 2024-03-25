@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    
+<title>English vocabulary generator</title>
+<meta name="description" content="This is an app that helps to learn vocabulary and grammary.">
+<meta name="keywords" content="English, vocabulary, grammary, english speaking">
+<meta charset='utf-8'>
+     
+<meta http.equiv="X-Ua-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">   
+                                            <!-- "../" is used when a given file in outside ("higher") of a folder with html file -->     
+<link rel="stylesheet" type="text/css" href="../CSS-file/generatorStyles.css">
+    
+<!-- linking to an icon library https://fontawesome.com/ -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+ 
+<!-- linking to the Google icon library  -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+ 
+    
+<!-- To make sure that semantic elements will work on IE versions lower than 9 ; source: https://www.quora.com/What-is-HTML5-Shiv -->   
+<!--[if lt IE 9]> 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script> 
+  <![endif]-->    
+    
+    
+    <!-- used for external javascript code -->
+<script type="text/javascript" src="../Java-file/Main.js"> </script> 
+    
+<!-- used for internal javascript code 
+ <script type="text/javascript">
+</script> -->
+      
+</head>
+   
+    
+    
+<body>
+    <header>
+    <div class="menu_bar">
+        <h1 class="logo">Vocab<span>Generator</span></h1>
+        
+        <ul>
+            <li><a href="#"><i class="ho fa-solid fa-house"></i>Home</a></li>
+            <li><a href="#">Start Here <i class="fa fa-caret-down"></i> </a>
+                <div class="dropdown_menu">
+                    <ul >
+                        <li><a href="guide.html#vid1" target="blank">Vocab. Guide</a></li>
+                        <li><a href="guide.html#vid2" target="blank">Speak. Guide</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Learning <i class="fa fa-caret-down"></i> </a>
+                <div class="dropdown_menu">
+                    <ul >
+                        <li><a href="#"><i class="fa fa-solid fa-book"></i>Vocabulary</a></li>
+                        <li><a href="speaking.html"><i class="fa fa-solid fa-microphone-lines"></i>Speaking</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Useful Links <i class="fa fa-caret-down"></i> </a>
+                <div class="dropdown_menu">
+                    <ul >
+                        <li><a href="#">Translators <i class="fa fa-caret-right"></i> </a>
+                        <div class="dropdown_menu2">
+                         <ul >
+                            <li><a href="https://translate.google.co.uk" target="blank">Google</a></li>
+                            <li><a href="https://www.deepl.com/translator" target="blank">DeepL</a></li>
+                         </ul>
+                        </div>
+                        </li>
+                        <li><a href="#"><i class="yt fa-brands fa-youtube"></i> Learning <i class="fa fa-caret-right"></i> </a>
+                        <div class="dropdown_menu2">
+                         <ul >
+                            <li><a href="https://www.youtube.com/@smashingenglish" target="blank">Smashing English</a></li>
+                            <li><a href="https://www.youtube.com/@EnglishSpeakingSuccess" target="blank">English Speaking Success</a></li>
+                            <li><a href="https://www.youtube.com/@EnglishwithLucy" target="blank">English With Lucy</a></li>
+                            <li><a href="https://www.youtube.com/@Taskmaster" target="blank">Taskmaster</a></li> 
+                         </ul>
+                        </div>
+                        </li>
+                        <li><a href="#">More Learning <i class="fa fa-caret-right"></i> </a>
+                        <div class="dropdown_menu2">
+                         <ul >
+                            <li><a href="https://teacherluke.co.uk/" target="blank">Luke's ENGLISH Podcast</a></li>
+                            <li><a href="https://lyricstranslate.com/en/translations" target="blank">Lyrics</a></li>
+                            <li><a href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2023/" target="blank">BBC English</a></li>
+                         </ul>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Contact <i class="fa fa-caret-down"></i> </a>
+                <div class="dropdown_menu">
+                    <ul >
+                        <li id="contact">
+                            <p><i class="gm fa-solid fa-envelope"></i>kodnuk755@gmail.com</p>
+                        </li>  
+                    </ul>
+                </div>
+            </li>
+        
+        </ul>
+     
+    </div>
+        
+        
+    </header>
+    
+    
+   
+ <!---------------------------------------------------------------------------->   
+ 
+    
+<div id="mainContainer">
+    
+    <div id="mainUserNav">
+    <!-- tick boxes division -->
+    <form id="allTB">  
+                                                    
+    <div  class="wordcat" style="float:left"> 
+         
+  <input type="checkbox" id="w1" class="tickbox" name="w" value="w1" onclick="checkBox1()">
+  <label for="w1" class="ticklabel"> nouns </label><br>
+        
+  <input type="checkbox" id="w2" class="tickbox" name="w" value="w2" onclick="checkBox2()">
+  <label for="w2" class="ticklabel"> verbs </label><br>
+        
+  <input type="checkbox" id="w3" class="tickbox" name="w" value="w3" onclick="checkBox3()">
+  <label for="w3" class="ticklabel"> adjectives </label><br>
+         
+    </div>
+        
+    <div class="wordcat" style="float:left">  
+        
+  <input type="checkbox" id="w4" class="tickbox" name="w" value="w4" onclick="checkBox4()">
+  <label for="w4" class="ticklabel"> tenses </label><br>
+        
+  <input type="checkbox" id="w5" class="tickbox" name="w" value="w5" onclick="checkBox5()">
+  <label for="w5" class="ticklabel"> idioms </label><br>
+        
+  <input type="checkbox" id="w6" class="tickbox" name="w" value="w6" onclick="checkBox6()">
+  <label for="w6" class="ticklabel"> collocations </label><br>
+        
+   </div> 
+     
+</form>
+    
+        
+    <!-- shuffle all words button  ---------------------------------------------------------->
+        
+    <div class="anyBtt" style="float:left">
+        <button type="button" id="resetWords" onclick="shuffleAllWords()" title="Shuffle All Vocab"><span id="shA1"  class="material-symbols-outlined">shuffle</span>
+        <span id="shA2" class="material-symbols-outlined">
+            dictionary
+            </span>
+        </button>
+    </div>
+        
+    
+     <!-- a slider showing/hiding examples of words  -----------------------------------------> 
+        
+     <div class="testClass" style="float:left">
+         <label for="mySlider" id="aboveSlider"> Hide examples </label>
+         <label class="switch">
+             <input type="checkbox" id="mySlider" onclick="toggleSlider()">
+             <span class="slider"></span>
+         </label>
+    </div>  
+        
+        
+    <!-- adding more content button  ---------------------------------------------------------->
+        
+    <div class="anyBtt" style="float:left">
+         <button type="button" id="plusContent" onclick="addMoreContent()" title="Add/Edit Content"><span class="material-symbols-outlined">
+             add_box
+             </span>
+        <span class="material-symbols-outlined">
+            edit_note
+             </span>
+        </button>
+    </div>
+        
+    
+    <!-- removing/searching content button  ---------------------------------------------------------->
+        
+    <div class="anyBtt" style="float:left">
+        <button type="submit" id="remSearch" onclick="remAndSearch()" title="Delete/Search Content"><span class="material-symbols-outlined">
+            delete
+            </span>
+        <span class="material-symbols-outlined">
+            search
+            </span>
+        </button>
+    </div>
+    
+
+    
+    <!-- removes float left of the above div boxes (e.g. check boxes) -->
+    <div style="clear:both"></div>
+    </div>
+    
+   
+    <!-------------------------------Nouns---------------------------------------------->
+    
+    <div class="wordOutput" id="nounCheck">
+        
+    <div style="float:left" class="testClass" id="no">noun</div> <!-- a category div box -->
+    
+    <div id="noun" class="prNm" style="float:left">fe</div> <!-- a property name div box -->
+    
+    <!-- (a handle) returns (gets, extracts, e.g. from an editing field or a given id) an element in an HTML file with a value followed by " = " -->
+    <script type="text/javascript">
+        
+        document.getElementById("noun").innerHTML = rndNoun;
+    </script>
+   
+    <!-- shuffle a chosen word button -->
+    <div class="anyBtt" style="float:left"> <!-- shuffle -->
+        <button type="submit" id="changeWord" onclick="shuffleWord()" title="shuffle"><span class="material-symbols-outlined">shuffle</span>
+        </button> 
+    </div>
+       
+    
+    <div id="nounExample" class="prVal" style="float:left">fe</div> <!-- a property value div box -->
+    
+
+    <script type="text/javascript">
+        
+        document.getElementById("nounExample").innerHTML = rndNounExa;
+    </script>
+    
+    
+    </div>
+    
+    <!--------------------------------Verbs------------------------------------------------------>
+    
+    <div class="wordOutput" id="verbCheck">
+        
+    <div style="float:left" class="testClass" id="ve">verb</div> <!-- a category div box -->
+    
+    <div id="verb" class="prNm" style="float:left">fe</div> <!-- a property name div box -->
+    
+    
+    <script type="text/javascript">
+        
+        document.getElementById("verb").innerHTML = rndVerb;
+    </script>
+   
+    <!-- shuffle a chosen word button -->
+    <div class="anyBtt" style="float:left">
+        <button type="submit" id="changeWord2" onclick="shuffleWord2()" title="shuffle"><span class="material-symbols-outlined">shuffle</span></button>
+       
+    </div>
+       
+    
+    <div id="verbExample" class="prVal" style="float:left">fe</div> <!-- a property value div box -->
+    
+    
+    <script type="text/javascript">
+        
+        document.getElementById("verbExample").innerHTML = rndVerbExa;
+    </script>
+    
+    
+    </div>
+    
+    <!---------------------------------Adjectives-------------------------------------------->
+    
+    <div class="wordOutput" id="adjectiveCheck">
+        
+    <div style="float:left" class="testClass" id="ad">adjective</div> <!-- a category div box -->
+    
+    <div id="adjective" class="prNm" style="float:left">fe</div> <!-- a property name div box -->
+    
+
+    <script type="text/javascript">
+        
+        document.getElementById("adjective").innerHTML = rndAdjective;
+    </script>
+   
+    <!-- shuffle a chosen word button -->
+    <div class="anyBtt" style="float:left">
+        <button type="button" id="changeWord3" onclick="shuffleWord3()" title="shuffle"><span class="material-symbols-outlined">shuffle</span></button>
+       
+    </div>
+  
+    
+    <div id="adjectiveExample" class="prVal" style="float:left">fe</div> <!-- a property value div box -->
+    
+    
+    <script type="text/javascript">
+        
+        document.getElementById("adjectiveExample").innerHTML = rndAdjectiveExa;
+    </script>
+    
+    
+    </div>
+    
+     <!----------------------------------Tenses-------------------------------------------->
+    
+    <div class="wordOutput" id="tenseCheck">
+        
+    <div style="float:left" class="testClass" id="te">tense</div> <!-- a category div box -->
+    
+    <div id="tense" class="prNm" style="float:left">fe</div> <!-- a property name div box -->
+    
+
+    <script type="text/javascript">
+        
+        document.getElementById("tense").innerHTML = rndTense;
+    </script>
+   
+    <!-- shuffle a chosen word button -->
+    <div class="anyBtt" style="float:left">
+        <button type="button" id="changeWord4" onclick="shuffleWord4()" title="shuffle"><span class="material-symbols-outlined">shuffle</span></button>
+       
+    </div>
+  
+    
+    <div id="tenseExample" class="prVal" style="float:left">fe</div> <!-- a property value div box -->
+    
+    
+    <script type="text/javascript">
+        
+        document.getElementById("tenseExample").innerHTML = rndTenseExa;
+    </script>
+    
+    <!-- pop up window button with an explanation -->
+    <div class="anyBtt" style="float:left">
+        <button id="clickPop" class="gramButton" onclick="switchOn()" title="When to Use?"><span class="material-symbols-outlined">
+            question_mark
+            </span></button>
+    </div>   
+        
+        
+        
+    </div>
+       
+    <!----------------------------------Idioms---------------------------------------------->
+    
+    <div class="wordOutput" id="idiomCheck">
+        
+    <div style="float:left" class="testClass" id="id">idiom</div> <!-- a category div box -->
+    
+    <div id="idiom" class="prNm" style="float:left">fe</div> <!-- a property name div box -->
+    
+    <!-- (a handle) returns (gets, extracts, e.g. from an editing field or a given id) an element in an HTML file with a value followed by " = " -->
+    <script type="text/javascript">
+        
+        document.getElementById("idiom").innerHTML = rndIdiom;
+    </script>
+   
+    <!-- shuffle a chosen word button -->
+    <div class="anyBtt" style="float:left">
+        <button type="submit" id="changeWord5" onclick="shuffleWord5()" title="shuffle"><span class="material-symbols-outlined">shuffle</span></button>
+       
+    </div>
+       
+    
+    <div id="idiomExample" class="prVal" style="float:left">fe</div> <!-- a property value div box -->
+    
+
+    <script type="text/javascript">
+        
+        document.getElementById("idiomExample").innerHTML = rndIdiomExa;
+    </script>
+    
+    
+    </div>  
+    
+    
+    <!-------------------------------Collocations---------------------------------------------->
+    
+    <div class="wordOutput" id="collocationCheck">
+        
+    <div style="float:left" class="testClass" id="co">collocation</div> <!-- a category div box -->
+    
+    <div id="collocation" class="prNm" style="float:left">fe</div> <!-- a property name div box -->
+    
+    <!-- (a handle) returns (gets, extracts, e.g. from an editing field or a given id) an element in an HTML file with a value followed by " = " -->
+    <script type="text/javascript">
+        
+        document.getElementById("collocation").innerHTML = rndColl;
+    </script>
+   
+    <!-- shuffle a chosen word button -->
+    <div class="anyBtt" style="float:left">
+        <button type="submit" id="changeWord6" onclick="shuffleWord6()" title="shuffle"><span class="material-symbols-outlined">shuffle</span></button>
+       
+    </div>
+       
+    
+    <div id="collocationExample" class="prVal" style="float:left">fe</div> <!-- a property value div box -->
+    
+
+    <script type="text/javascript">
+        
+        document.getElementById("collocationExample").innerHTML = rndCollExa;
+    </script>
+    
+    
+    </div>
+    
+     <!-------------------------------Adding new content---------------------------------------------->
+    
+    <div class="wordOutput" id="newInfo">
+    <!-- a drop-down list to choose a word category for adding new content purposes -->   
+    <div style="float:left" class="testClass" id="catA">
+     
+     <label for="categories">Choose an input category:</label>
+        
+     <select id="categories" name="categories" title="categories">
+      <option value="Choose a category" selected>Choose a category</option>  
+      <option value="nouns">nouns</option> 
+      <option value="verbs">verbs</option> 
+      <option value="adjectives">adjectives</option>
+      <option value="tenses">tenses</option>
+      <option value="idioms">idioms</option>
+      <option value="collocations">collocations</option>
+    </select>  
+      
+    </div>
+    
+        
+    <!-- an input text field to enter in a word(key) from a chosen category --> 
+    <div id="inputWord" class="testClass" style="float:left">
+     <label for="inpword">Your vocab:</label> 
+     <!-- <input type="text" id="inpword" name="inpword" placeholder="Enter vocab" spellcheck="false" required /> -->
+        
+     <textarea id="inpword" name="inpword" placeholder="Enter vocab to add" rows="2" cols="15" spellcheck="false" required ></textarea>
+        
+    </div>
+    
+    
+    <!-- an input text field to enter in an example(value) from a chosen category -->
+    <div id="inputExample" class="testClass" style="float:left">
+     <label for="inpexample">Your example:</label> 
+     <!--<input type="text" id="inpexample" name="inpexample" placeholder="Enter an example" spellcheck="false" required /> -->
+        
+     <textarea id="inpexample" name="inpexample" placeholder="Enter an example to add" rows="2" cols="25" spellcheck="false" required></textarea>
+       
+    </div>
+    
+    <!-- a button to submit newly added content (key-value pairs) -->
+    <div class="anyBtt" style="float:left">
+        <button type="submit" value="submit" id="addInfo" onclick="addAllInfo()" title="Add a Record"><span class="material-symbols-outlined">
+            add
+            </span>
+        </button>
+        
+    </div>
+    
+    
+    </div>
+       
+     
+    <!-------------------------------Deleting and searching content---------------------------------------------->
+    
+    <div class="wordOutput" id="delSearch" >
+    
+    <!-- a drop-down list to choose a word category for searching/removing purposes -->   
+    <div style="float:left" class="testClass" id="catD">
+     
+     <label for="moreCateg">Choose an input category:</label>
+        
+     <select id="moreCateg" name="categories" title="categories" onchange="appendArrays2()">
+      <option value="All" selected>All</option>  
+      <option value="nouns">nouns</option> 
+      <option value="verbs">verbs</option> 
+      <option value="adjectives">adjectives</option> 
+      <option value="tenses">tenses</option>
+      <option value="idioms">idioms</option>
+      <option value="collocations">collocations</option>
+    </select>  
+      
+    </div>
+
+
+    <!-- a div box containing a drop-down list of words (keys) to choose from + a search bar -->    
+    <div id="dropPlusObj" class="testClass" style="float:left">
+    <!-- a drop-down list of words (keys) to choose from -->   
+    <div id="dropdowntest">
+        
+    <form id="teswords" >
+    <label for="takeinp" id="moveIt">Choose vocab:</label>    
+    <input list="words" id="takeinp" spellcheck="false" placeholder="Search..."> <!-- a search bar -->
+    <datalist id="words" >
+    <option value="egg">egg</option>
+    <option value="Eter">Eter</option>
+    <option>Bite</option>
+    
+    </datalist>
+    </form>
+        
+    </div>
+   <!-- returns a category name (object) of a chosen word(key) -->     
+  <div id="objDescr" class="testClass">fe</div>      
+             
+ </div> 
+        
+      <!-- a property value div box -->  
+     <div class="testClass" id="exaDescr" class="testClass" style="float:left"> fe </div> 
+     
+     
+     <!-- a button removing the whole chosen property (a key-value pair) -->   
+    <div id="delButton" class="anyBtt" style="float:left">
+        <button type="submit" value="submit" id="delProperty" onclick="delAllProp()" title="Delete a Record"><span class="material-symbols-outlined">
+            delete_forever
+            </span></button>
+        
+    </div>
+    
+    
+    </div>
+        
+    <!------------------------------------------------------------------------------------>    
+        
+        
+        <div id="overlay"></div> <!-- a div box containing an overlay styling once triggered -->
+        
+        
+        <div id="actCont" class="pop-window">
+            <div class="pop-header">
+                <div class="pop-title"></div>
+                <button class="close-win" onclick="switchOff()">&times;</button>
+            </div>
+            <div class="testPop"> <!-- #1 tense -->
+                
+                    <h2>When should we use Present Simple tense?</h2>
+                
+                    <h3>1. Describing repeatable activities:</h3>
+
+                    <p>*<span> I work</span> on Sundays.</p>
+
+                    <h3>2. Describing feelings, conditions, traits, long-term situations:</h3>
+
+                    <p>*<span> I work</span> as an architect.<br>
+                    *<span> She is asleep</span>.<br>
+                    *<span> The soup smells</span> nice.</p>
+
+                    <h3>3. Describing nature laws, genuine phenomenons:</h3>
+
+                    <p>*<span> Water boils</span> in 100 degrees centigrade.</p>
+            </div>
+        </div>     
+        <div id="conTense" class="pop-window"> <!-- #2 tense -->
+            <div class="pop-header">
+                <div class="pop-title"></div>
+                <button class="close-win" onclick="switchOff()">&times;</button>
+            </div>
+            <div class="testPop">
+                
+                    <h2>When should we use Present Continuous tense?</h2>
+                
+                    <h3>1. Describing actual activities:</h3>
+
+                    <p>*<span> I'm cooking</span> right now.</p>
+
+                    <h3>2. Describing temporary activities:</h3>
+
+                    <p>*<span> I'm working</span> as a waitress this summer.</p>
+
+                    <h3>3. Describing specific plans for the nearest future:</h3>
+
+                    <p>*<span> I'm going out</span> tomorrow evening.</p>
+
+                    <h3>4. Describing changeable conditions and situations:</h3> 
+
+                    <p>*<span> It's getting</span> dark and chilly.</p>
+
+                    <h3>5. Describing frequent and burdensome events (always + continually):</h3>
+
+                    <p>*<span> My children are</span> continually <span>disrupting</span> me.</p> 
+            </div>
+        </div>
+        <div id="presPerf" class="pop-window"> <!-- #3 tense -->
+            <div class="pop-header">
+                <div class="pop-title"></div>
+                <button class="close-win" onclick="switchOff()">&times;</button>
+            </div>
+            <div class="testPop">
+                
+                    <h2>When should we use Present Perfect tense?</h2>
+                
+                    <h3>1. Describing results of actions from the past:</h3>
+                    
+                    <p>*<span> The mechanic has</span> finally <span>mended</span> my car so I am able to visit you now.</p>
+                    
+                    <h3>2. Describing an action/condition started in the past and persisting until now:</h3>
+                    
+                    <p>*<span> I have lived</span> in this city since I was 8 yo.<br>
+                    * How long<span> have you known</span> Karen?</p>
+                    
+                    <h3>3. Describing an unfinished period of time yet:</h3>
+                    
+                    <p>* How many flats<span> have you</span> and <span>your partner browsed</span> (so far) this week?</p>
+                    
+                    <h3>4. Describing experiences and achievements of alive people:</h3>
+                    
+                    <p>*<span> Have you</span> ever <span>been</span> to Japan?<br>
+                    *<span> My childhood friend has visited</span> almost every country in Europe.</p>
+                    
+            </div>
+        </div>
+        <div id="futSimple" class="pop-window"> <!-- #4 tense -->
+            <div class="pop-header">
+                <div class="pop-title"></div>
+                <button class="close-win" onclick="switchOff()">&times;</button>
+            </div>
+            <div class="testPop">
+                
+                    <h2>When should we use Future Simple tense?</h2>
+                
+                    <h3>1. Describing spontaneous decisions, undertaken in the moment of speaking:</h3>
+                    
+                    <p>* Somebody is ringing at the door.<span> I will open</span> it.</p>
+                    
+                    <h3>2. Describing own assumptions:</h3>
+                    
+                    <p>* I expect<span> Timothy will say</span> sorry to me some day.</p>
+                    
+                    <h3>3. Expressing promises and threats:</h3>
+                    
+                    <p>*<span> I will prepare</span> your favourite snacks next time you visit me.</p>
+                    
+                    <h3>4. Saying about dreams and general plans for the future:</h3>
+                    
+                    <p>*<span> I will attend</span> the best uni at my city once I've finished my high school.</p>
+                    
+                    <h3>5. Describing activities, which in our opinion, will repeat in the future:</h3>
+                    
+                    <p>*<span> My parents will</span> always<span> help</span> me when I am in trouble.</p>
+                     
+                    <h3>6. Expressing polite requests:</h3>
+                    
+                    <p>*<span> Will you do</span> the laundry today, please?</p>
+                       
+            </div>
+        </div>
+        <div id="pasSimple" class="pop-window"> <!-- #5 tense -->
+            <div class="pop-header">
+                <div class="pop-title"></div>
+                <button class="close-win" onclick="switchOff()">&times;</button>
+            </div>
+            <div class="testPop">
+                
+                    <h2> When should we use Past Simple tense? </h2>
+                
+                    <h3>1. Describing actions, conditions, situations from the past not having any reference to the present:</h3> 
+                    
+                    <p>*<span> I learnt</span> English many years ago.</p>
+                    
+                    <h3>2. Describing habits from the past:</h3>
+                    
+                    <p>*<span> My dad had</span> a cup of coffee and <span>read</span> every morning.</p>
+                    
+                    <h3>3. Describing an event from the past without pointing on the occurrence time:</h3>
+                    
+                    <p>*<span> Dinosaurs went</span> extinct millions of years ago.</p>
+                    
+                    <h3>4. Asking about a time/date of actions occurred in the past:</h3>
+                    
+                    <p>* What time<span> did your kids wake up</span> for school?</p>
+                    
+                    <h3>5. Describing a sequence of events that happened one after another without a significant time gap:</h3>
+
+                    <p>*<span> He opened</span> the door, <span>came in</span> and <span>gave</span> a kiss for goodbye.</p>
+                    
+                 
+            </div>
+        </div>
+        <div id="pasCont" class="pop-window"> <!-- #6 tense -->
+            <div class="pop-header">
+                <div class="pop-title"></div>
+                <button class="close-win" onclick="switchOff()">&times;</button>
+            </div>
+            <div class="testPop">
+                
+                    <h2>When should we use Past Continuous tense?</h2>
+        
+                    <h3>1. Referring to a past action without providing any information about its completion:</h3>
+                    
+                    <p>*<span> I was doing</span> that, it was a sheer delight!</p>
+
+                    <h3>2. Describing an activity taking place continually in the past (+ its duration):</h3>
+                    
+                    <p>*<span> You weren’t talking</span> to each other the whole party, could I know why?</p>
+                    
+                    <h3>3. While describing an action in a specific moment in the past or whilst asking about that action:</h3> 
+                    
+                    <p>*<span> It was raining</span> heavily three hours ago.</p>
+                    
+                    <h3>4. While taking about at least TWO actions, which were taking place in the same time:</h3>
+                    
+                    <p>*<span> Tony was driving</span> while<span> Katie was scrolling</span> her smartphone.</p>
+                    
+                    <h3>5. Describing an event that repeated in the past and was irritating:</h3>
+                    
+                    <p>*<span> Our neighbour was</span> always<span> complaining</span> about our 4 am morning routine (singing outloud).</p>
+                    
+                    <h3>6. When we talk about an activity from the past, that was interrupted by the 2nd, shorter one:</h3>
+
+                    <p>*<span> I was sleeping</span> when you rang me.</p>
+            </div>
+            
+        </div>
+        
+        
+   </div> 
+</body>
+    
+ 
+    
+<footer>
+    <div id="foot">
+        <div id="ownership">  
+            <p>&copy; Copyright 2024 Grzegorz Lisowski - All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+    
+ 
+</html>
+    
+    
+    
+    
+    
+    
+    

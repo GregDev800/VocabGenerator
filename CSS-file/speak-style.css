@@ -1,0 +1,182 @@
+@import url("reset.css");
+
+
+
+
+
+/*Image by <a href="https://www.freepik.com/free-photo/top-view-dice-alphabet-frame-concept_8381580.htm#page=5&query=english%20vocabulary&position=47&from_view=search&track=ais&uuid=3ff9ba0a-709a-47d3-a50e-aabb63b95284">Freepik</a>*/
+
+body {
+    
+   /* background-image: url("../Images-file/backg1.jpg");
+    background-repeat: no-repeat;
+    background-blend-mode: hue; /* hue is fine*/
+   /* background-size: 2550px 1700px; /* (x, y) */ /* to keep the ratio 1.5 : 1 */
+   /* background-position: -1000px 2000px;*/
+}
+
+
+#mainSpeaking {
+    margin-top: 200px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+}
+
+
+
+.queColumn {
+    margin-right: 20px;
+    /*width: 130px;*/
+    border-right: dotted;
+    padding-right: 20px;
+    /*border: dashed 2px blue;*/
+    
+}
+
+.queColumn:last-child {
+    border: none;
+}
+
+.queColumn:first-child {
+    margin-left: 70px;
+}
+
+#questionBox {
+    border: solid 3px black;
+    
+    background-color: white;
+    border-radius: 10px;
+    
+    padding: 15px;
+    padding-left: 20px;
+    text-align: left;
+    vertical-align: middle;
+   
+}
+
+
+.queFlow:hover {
+    cursor: pointer;
+    
+}
+
+/*input[type=radio] {
+    background-color: cyan;
+}*/
+
+#questionBox p {
+    margin-bottom: 15px;
+    padding: 5px;
+    /*font-weight: 400;*/
+    font-size: 1.2em;
+    font-weight: bolder;
+    width: 400px;
+    height: 20px;
+    border: solid 1px grey;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+#practBox {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: solid 3px black;
+    min-height: 100px;
+    vertical-align: middle;
+    
+    background-color: white;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+
+#fieldNm {
+    border: solid 2px black;
+    /*min-height: 25px;
+    min-width: 125px;*/
+
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    vertical-align: middle;
+    width: 130px;
+    
+    background-color: white;
+    border-radius: 6px;
+    
+    margin-top: 20px;
+}
+
+#queNm {
+    width: auto;
+    height: auto;
+    min-width: 150px;
+    max-width: 300px; /* >optional 130px */
+    padding: 10px;
+    
+    
+    
+    border: solid 1px grey;
+    margin: 10px;
+    text-align: center;
+    vertical-align: middle;
+    
+    background-color: white;
+    border-radius: 6px;
+    
+    margin-top: 20px;
+}
+
+/*.testingClass {
+    /*border: solid 2px black;*/
+  /*  margin: 10px;
+    padding: 5px;
+    text-align: center;
+    vertical-align: middle;
+    /*width: 130px;*/
+/*}*/
+
+input[type=radio] {
+    margin-top: 5px;
+}
+
+/* shuffle button */
+#changeQue {
+    
+  margin-top: 20px;
+  margin-left: 10px;
+  max-height: 33px;
+    
+  border-color: cornflowerblue;
+  border-radius: 6px;
+}
+
+/* shuffle button */
+#changeQue:hover {
+    
+    transition: all 0.2s;
+    border-color: cornflowerblue;
+    
+    -webkit-box-shadow: 0px 0px 10px 3px rgba(83,218,242,0.5);
+    -moz-box-shadow: 0px 0px 10px 3px rgba(83,218,242,0.5);
+    box-shadow: 0px 0px 10px 3px rgba(83,218,242,0.5);
+    
+    background-color: #e6ffff;
+    color: black;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
